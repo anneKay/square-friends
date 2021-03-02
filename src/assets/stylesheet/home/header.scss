@@ -1,0 +1,27 @@
+@import "../shared/colours.scss";
+
+.body-header {
+  .header-text {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+  }
+  .search-icon {
+    margin: 10px 0 0 10px;
+  }
+  .filter-icon {
+    margin: 10px 0 0 15px
+  }
+
+  .form-control {
+    border: 1px solid #fff;
+  }
+  .input-group-prepend {
+    margin-right: -10px;
+  }
+  .input-group-text {
+    border: none;
+    border-left: 1px solid $grey;
+    background-color: white;
+  }
+}
