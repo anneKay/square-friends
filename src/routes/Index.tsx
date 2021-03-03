@@ -18,13 +18,4 @@ const Router = () => (
   </BrowserRouter>
 )
 
-
-
-// const routes = (
-//   <BrowserRouter history={history}>
-//     <Route exact path="/" component={Home} />
-//     {/* <Route path="*" component={() => "404 NOT FOUND"} /> */}
-//   </BrowserRouter>
-// );
-
 export default Router;

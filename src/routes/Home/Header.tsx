@@ -1,22 +1,21 @@
 import React, { FC } from "react";
-import { Row, Col, Form, FormControl, InputGroup } from "react-bootstrap";
-import logo from "../../assets/images/logo.png";
-import userIcon from "../../assets/images/user.png";
-import messageIcon from "../../assets/images/message.png";
-import notificationIcon from "../../assets/images/notification.png";
-import profile from "../../assets/images/profile.png";
+import { Row, Col, FormControl, InputGroup } from "react-bootstrap";
 import dropdown from "../../assets/images/dropdown.png";
 import searchIcon from "../../assets/images/search.png";
 import funnelIcon from "../../assets/images/funnel.png"
 import "../../assets/stylesheet/home/header.scss";
 
-const Header: FC<any> = () => {
+
+interface Props {
+}
+
+const Header: FC<Props> = () => {
   return (
     <>
-      <Row className="body-header">
+      <Row xs={1} md={2}className="body-header">
         <Col> <h2 className="header-text">Friends List</h2></Col>
         <Col className="justify-content-end">
-          <Row>
+          <Row className="header-input">
             <Col sm={2}><img className="search-icon" src={searchIcon} alt="search"></img></Col>
             <Col sm={6}>
             <InputGroup>

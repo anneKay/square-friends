@@ -1,17 +1,25 @@
 import React from 'react';
 import Navigation from "../../components/Navbar/Navbar";
+import friends from "../../Helper/friendsData/friendsList.json"
 import Header from "./Header";
+import Card from "./Card";
+import "../../assets/stylesheet/home/home.scss";
 
 
-const Home: React.FC<{title:string}> = ({children, title}) => {
-  return <div>
+interface Props {
+}
+
+const Home: React.FC<Props> = () => (
+  <div>
     <Navigation />
-    <div className="body">
-      <Header />
+    <div className="main-container">
+      <div className="body">
+        <Header />
+        <Card />
+      </div>
     </div>
-    
   </div>
 
-};
+)
 
 export default Home;

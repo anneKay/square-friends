@@ -1,0 +1,43 @@
+@import "../shared/colours.scss";
+
+.card-container {
+  margin-top: 30px;
+  .card {
+    max-width: 480px;
+    min-width: 448px;
+    margin-bottom: 25px;
+    border-radius: 1.2rem;
+    border: 1px solid #fff;
+    .card-avatar {
+      width: 86px;
+      height: auto;
+      border-radius: 50%;
+      margin-top: -50px;
+    }
+    .follow {
+      border-radius: 10px;
+      width: 90px;
+      height: 30px;
+      margin-left: -30px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .title-text {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 27px;
+    }
+    .text-muted {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16.41px;
+    }
+    .bio-text {
+      line-height: 26px;
+      font-size: 16px;
+    }
+  }
+
+
+}
