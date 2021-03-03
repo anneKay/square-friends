@@ -1,5 +1,6 @@
 import React, { useState, useEffect, FC } from "react";
 import { Card,Row, Col,Button, Container } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import { FriendsData } from "../../Types/FriendsData";
 import { saveFollower, getFollowers } from "../../Helper/datastore";
 import friendsJson from "../../Helper/friendsData/friendsList.json"
@@ -11,6 +12,7 @@ interface Props {
 }
 
 const CardContainer: FC<Props> = () => {
+  let history = useHistory();
 
   const [friends, setFriends] = useState<Array<FriendsData>>(friendsJson.data);
   const [followers, setFollowers] = useState({});
@@ -24,6 +26,8 @@ const CardContainer: FC<Props> = () => {
   const setFollowerStatus = (followers: object, id: number) => (
     followers.hasOwnProperty(`${id}`) ? "Following" : "Follow"
   )
+  const setVariant = (id: number) => 
+    (setFollowerStatus(followers, id) === "Following" ? "primary" : "outline-primary")
 
   useEffect(() => {
     function fetchFollowers() {
@@ -49,12 +53,12 @@ const CardContainer: FC<Props> = () => {
                     <Card.Img className="card-avatar" src={avatar} />
                   </Col>
                   <Col sm={6}>
-                    <Row><Card.Title className="title-text">{friend.name}</Card.Title></Row>
-                    <Row><Card.Subtitle className="mb-2 text-muted">{friend.username}</Card.Subtitle></Row>
+                    <Row><Card.Title className="title-text" onClick={() => history.push(`/${friend.username}`)}>{friend.name}</Card.Title></Row>
+                    <Row><Card.Subtitle className="mb-2 text-muted">{`@${friend.username}`}</Card.Subtitle></Row>
                     <Row> <Card.Text className="bio-text">{friend.bio}</Card.Text></Row>
                   </Col>
                   <Col sm={3}>
-                    <Button className="follow" variant="primary" onClick={() => handleFollowClick(friend.id)}>{setFollowerStatus(followers, friend.id)}</Button>
+                    <Button className="follow" variant={setVariant(friend.id)} onClick={() => handleFollowClick(friend.id)}>{setFollowerStatus(followers, friend.id)}</Button>
                   </Col>
                 </Row>
               </Card.Body>

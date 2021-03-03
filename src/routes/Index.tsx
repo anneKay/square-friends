@@ -1,5 +1,6 @@
 import React from 'react';
 import Home from "./Home/Index";
+import Details from "./Details/Index";
 import {
   BrowserRouter,
   Route,
@@ -12,7 +13,7 @@ const Router = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/me" component={Home} />
+      <Route exact path="/:name" component={Details} />
     {/* <Route path="*" component={() => "404 NOT FOUND"} /> */}
     </Switch>
   </BrowserRouter>
