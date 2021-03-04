@@ -1,7 +1,6 @@
 import React from "react";
 import { withLocalize } from "react-localize-redux";
 import cardTranslation from "../../../translations/cardTranslation.json";
-import headerTranslation from "../../../translations/headerTranslation.json";
 import Card from "./Card";
 
 class Headers extends React.Component {

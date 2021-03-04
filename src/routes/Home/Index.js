@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Navigation from "../../components/Navbar/Navbar";
 import LanguageToggle from "../../components/languages/LanguageToggle";
 import Headers from "./homeHeader/Headers";

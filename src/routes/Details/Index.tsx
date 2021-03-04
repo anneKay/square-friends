@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState } from "react";
 import coverImage from "../../assets/images/cover-image.png";
 import avatar from "../../assets/images/avatar.png";
 import Navbar from "../../components/Navbar/Navbar";
