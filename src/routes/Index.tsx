@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Home from "./Home/Index";
 import Details from "./Details/Index";
 import {

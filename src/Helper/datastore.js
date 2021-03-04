@@ -3,8 +3,8 @@
  * Returns undefined if no data is found.
  */
 export const getFollowers = () => {
-  const serializeddata = window.localStorage.getItem('followers');
-  const followers = JSON.parse(serializeddata || '{}');
+  const serializeddata = window.localStorage.getItem("followers");
+  const followers = JSON.parse(serializeddata || "{}");
   return followers;
 };
 
@@ -17,7 +17,7 @@ export const saveFollower = (followersId) => {
   let key = followersId;
   followerHash[`${key}`] = true;
   const serializeddata = JSON.stringify(followerHash);
-  window.localStorage.setItem('followers', serializeddata);
+  window.localStorage.setItem("followers", serializeddata);
 };
 
 /**

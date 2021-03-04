@@ -12,7 +12,7 @@ class Headers extends React.Component {
   render() {
     return (
       <Header />
-    )
+    );
   }
 }
 

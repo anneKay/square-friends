@@ -4,7 +4,7 @@ import "../../assets/stylesheet/shared/lang-toggle.scss";
 
 const LanguageToggle = ({ languages, activeLanguage, setActiveLanguage }) => (
   <ul className="selector">
-    {languages.map(lang => (
+    {languages.map((lang) => (
       <li key={lang.code} className="justify-content-end">
         <button className="lang" onClick={() => setActiveLanguage(lang.code)}>
           {lang.name}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Navigation from "../../components/Navbar/Navbar";
 import LanguageToggle from "../../components/languages/LanguageToggle";
 import Headers from "./homeHeader/Headers";
@@ -19,7 +19,7 @@ class Home extends React.Component{
       ],
       translation: globalTranslations,
       options: {renderToStaticMarkup: false}
-    })
+    });
   }
 
   render() {
@@ -34,7 +34,7 @@ class Home extends React.Component{
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
