@@ -7,7 +7,7 @@ import funnelIcon from "../../../assets/images/funnel.png";
 import "../../../assets/stylesheet/home/header.scss";
 
 
-interface Props {
+export interface Props {
 }
 
 const Header: FC<Props> = () => {
@@ -29,8 +29,6 @@ const Header: FC<Props> = () => {
             </Col>
             <Col><img className="filter-icon" src={funnelIcon} alt="filter" /></Col>
           </Row>
-          
-          
         </Col>
     </Row>
     </>

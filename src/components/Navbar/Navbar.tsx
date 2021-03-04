@@ -8,7 +8,10 @@ import profile from "../../assets/images/profile.png";
 import searchIcon from "../../assets/images/search.png";
 import "../../assets/stylesheet/navigation/navbar.scss";
 
-const Navigation: FC<any> = () => {
+export interface Props {
+
+}
+const Navigation: FC<Props> = () => {
   return (
     <Navbar bg="light" expand="lg">
       <a href="/" className="logo">

@@ -6,7 +6,6 @@ import Header from "./Header";
 class Headers extends React.Component {
   constructor(props) {
     super(props);
-
     this.props.addTranslation(headerTranslation);
   }
 

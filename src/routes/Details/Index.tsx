@@ -7,20 +7,16 @@ import { FriendsData } from "../../Types/FriendsData";
 import { getDetails } from "../../Helper/datastore";
 import "../../assets/stylesheet/details/details-page.scss";
 
-
-interface Props {
+export interface Props {
 }
 
-
 const Header: FC<Props> = () => {
-  
-  
+
   const getUser = () => {
     const user = getDetails(friendsJson.data);
-    return user || {};
+    return user;
   }
-  const [ userDetails, setUserDetails ] = useState<FriendsData>(getUser);
-
+  const [ userDetails, setUserDetails ] = useState<FriendsData>(getUser());
 
   return (
     <>
@@ -36,8 +32,7 @@ const Header: FC<Props> = () => {
         <h4 className="bio-text">{userDetails.bio}</h4>
         </div>
       </div>
-      ): (<div><h1>Friend not Found</h1></div>)}
-
+      ): (<div><h1>Friend not found</h1></div>)}
     </>
   )
 }

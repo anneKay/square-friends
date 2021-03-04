@@ -1,11 +1,10 @@
-
 /**
  * @description retrives followers from localStorage.
  * Returns undefined if no data is found.
  */
 export const getFollowers = () => {
   const serializeddata = window.localStorage.getItem('followers');
-  const followers = JSON.parse(serializeddata);
+  const followers = JSON.parse(serializeddata || '{}');
   return followers;
 };
 

@@ -9,5 +9,3 @@ export type FriendsDataResultType = {
   total_count: number;
   data: Array<FriendsData>;
 }
-
-// export type 
