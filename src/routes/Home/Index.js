@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Navigation from "../../components/Navbar/Navbar";
 import LanguageToggle from "../../components/languages/LanguageToggle";
-import Headers from "./Headers";
-import Card from "./Card";
+import Headers from "./homeHeader/Headers";
+import Cards from "./card/Cards";
 import globalTranslations from "../../translations/global.json";
 // import { renderToStaticMarkup } from "react-dom/server";
 import { withLocalize } from "react-localize-redux";
@@ -41,22 +41,21 @@ class Home extends React.Component{
       ],
       translation: globalTranslations,
       options: {renderToStaticMarkup: false}
-      // options: { renderToStaticMarkup }
     })
   }
 
   render() {
     return (
-<div>
-    <LanguageToggle />
-    <Navigation />
-    <div className="main-container">
-      <div className="body">
-        <Headers />
-        <Card />
+      <div>
+        <LanguageToggle />
+        <Navigation />
+        <div className="main-container">
+          <div className="body">
+            <Headers />
+            <Cards />
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
     )
   }
 }

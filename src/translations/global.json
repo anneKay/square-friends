@@ -1,6 +1,6 @@
 {
   "header": {
     "input": ["search", "chercher"],
-    "title": ["Friends List", "liste d'amis"]
+    "me": ["Friends List", "liste d'amis"]
   }
 }

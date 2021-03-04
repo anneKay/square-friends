@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import { Row, Col, FormControl, InputGroup } from "react-bootstrap";
 import { Translate } from "react-localize-redux";
-import dropdown from "../../assets/images/dropdown.png";
-import searchIcon from "../../assets/images/search.png";
-import funnelIcon from "../../assets/images/funnel.png";
-import "../../assets/stylesheet/home/header.scss";
+import dropdown from "../../../assets/images/dropdown.png";
+import searchIcon from "../../../assets/images/search.png";
+import funnelIcon from "../../../assets/images/funnel.png";
+import "../../../assets/stylesheet/home/header.scss";
 
 
 interface Props {

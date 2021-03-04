@@ -1,6 +1,6 @@
 import React from "react";
 import { withLocalize } from "react-localize-redux";
-import headerTranslation from "../../translations/headerTranslation.json";
+import headerTranslation from "../../../translations/headerTranslation.json";
 import Header from "./Header";
 
 class Headers extends React.Component {

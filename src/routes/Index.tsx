@@ -15,7 +15,7 @@ const Router = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/:name" component={Details} />
-      {/* <Route path="*" component={() => "404 NOT FOUND"} /> */}
+        {/* <Route path="*" component={() => "404 NOT FOUND"} /> */}
       </Switch>
     </BrowserRouter>
   </LocalizeProvider>

@@ -1,13 +1,13 @@
-import React, { useState, useEffect, FC } from "react";
+import React, { useState, FC } from "react";
 import { Card,Row, Col,Button, Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import { FriendsData } from "../../Types/FriendsData";
+import { FriendsData } from "../../../Types/FriendsData"
 import { Translate } from "react-localize-redux";
-import { saveFollower, getFollowers } from "../../Helper/datastore";
-import friendsJson from "../../Helper/friendsData/friendsList.json"
-import coverImage from "../../assets/images/cover-image.png";
-import avatar from "../../assets/images/avatar.png";
-import "../../assets/stylesheet/home/card.scss";
+import FollowersHook from "./FollowersHook";
+import friendsJson from "../../../Helper/friendsData/friendsList.json"
+import coverImage from "../../../assets/images/cover-image.png";
+import avatar from "../../../assets/images/avatar.png";
+import "../../../assets/stylesheet/home/card.scss";
 
 interface Props {
 }
@@ -15,30 +15,19 @@ interface Props {
 const CardContainer: FC<Props> = () => {
   let history = useHistory();
 
-  const [friends, setFriends] = useState<Array<FriendsData>>(friendsJson.data);
-  const [followers, setFollowers] = useState({});
-  const [followerId, setFollowerId] = useState<number>(0);
+  const { followers, handleFollowClick } = FollowersHook();
 
-  const handleFollowClick = (id: number) => {
-    saveFollower(id);
-    setFollowerId(id);
-  }
+  const [friends, setFriends] = useState<Array<FriendsData>>(friendsJson.data);
 
   const setFollowerStatus = (followers: object, id: number) => (
     followers.hasOwnProperty(`${id}`) ? "Following" : "Follow"
   )
+
+  const setId = (id:number) => 
+    (setFollowerStatus(followers, id) === "Following" ? "card.following" : "card.follow")
+
   const setVariant = (id: number) => 
     (setFollowerStatus(followers, id) === "Following" ? "primary" : "outline-primary")
-
-  useEffect(() => {
-    function fetchFollowers() {
-      let followersHash = getFollowers();
-      if(followersHash) {
-        setFollowers(followersHash);
-      }
-    }
-    fetchFollowers();
-  }, [followerId])
 
   return (
     <>
@@ -59,7 +48,7 @@ const CardContainer: FC<Props> = () => {
                     <Row> <Card.Text className="bio-text">{friend.bio}</Card.Text></Row>
                   </Col>
                   <Col sm={3}>
-                    <Button className="follow" variant={setVariant(friend.id)} onClick={() => handleFollowClick(friend.id)}>{setFollowerStatus(followers, friend.id)}</Button>
+                    <Button className="follow" variant={setVariant(friend.id)} onClick={() => handleFollowClick(friend.id)}><Translate id={setId(friend.id)||"card.follow"}>{setFollowerStatus(followers, friend.id)}</Translate></Button>
                   </Col>
                 </Row>
               </Card.Body>

@@ -1,6 +1,6 @@
 {
   "card": {
-    "name": "Nom",
-    "username":  "Nom d'utilisateur"
+    "follow": "suivre",
+    "following": "suivant"
   }
 }

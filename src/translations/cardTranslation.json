@@ -1,0 +1,6 @@
+{
+  "card": {
+    "follow": ["Follow", "suivre"],
+    "following": ["following", "suivant"]
+  }
+}
