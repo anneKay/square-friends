@@ -1,0 +1,13 @@
+.selector {
+  list-style-type: none;
+  text-align: right;
+  margin: 0;
+  li {
+    display: inline;
+    margin-right: 10px;
+    button {
+      margin-top: 10px;
+    }
+    // float: right;
+  }
+}

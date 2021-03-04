@@ -4,19 +4,22 @@ import Details from "./Details/Index";
 import {
   BrowserRouter,
   Route,
-  Switch,
-  withRouter, RouteComponentProps
+  Switch
 } from "react-router-dom";
+import { LocalizeProvider } from 'react-localize-redux';
 
 
 const Router = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/:name" component={Details} />
-    {/* <Route path="*" component={() => "404 NOT FOUND"} /> */}
-    </Switch>
-  </BrowserRouter>
+  <LocalizeProvider>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/:name" component={Details} />
+      {/* <Route path="*" component={() => "404 NOT FOUND"} /> */}
+      </Switch>
+    </BrowserRouter>
+  </LocalizeProvider>
+  
 )
 
 export default Router;

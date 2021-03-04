@@ -2,6 +2,7 @@ import React, { useState, useEffect, FC } from "react";
 import { Card,Row, Col,Button, Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { FriendsData } from "../../Types/FriendsData";
+import { Translate } from "react-localize-redux";
 import { saveFollower, getFollowers } from "../../Helper/datastore";
 import friendsJson from "../../Helper/friendsData/friendsList.json"
 import coverImage from "../../assets/images/cover-image.png";
@@ -44,7 +45,7 @@ const CardContainer: FC<Props> = () => {
       <Container className="card-container">
         <Row md={1} lg={2}>
         {friends.length > 0 && friends.map((friend) => (
-          <Col>
+          <Col key={`id--${friend.id}`}>
             <Card>
               <Card.Img variant="top" src={coverImage} />
               <Card.Body>

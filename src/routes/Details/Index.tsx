@@ -11,6 +11,7 @@ import "../../assets/stylesheet/details/details-page.scss";
 interface Props {
 }
 
+
 const Header: FC<Props> = () => {
   const [ userDetails, setUserDetails ] = useState<FriendsData>(getDetails(friendsJson.data));
   return (
